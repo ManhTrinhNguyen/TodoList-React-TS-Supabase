@@ -1,0 +1,8 @@
+/* Mobile size 480px */
+.container {
+  height: 100vh;
+  max-width: 480px;
+  width: 100%;
+  margin: 0 auto;
+  /* background: var(--Dark-Blue, #10141E); */
+}

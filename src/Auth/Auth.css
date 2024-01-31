@@ -1,0 +1,20 @@
+/* Mobile size 480px */
+
+.auth-container {
+  width: 90%;
+  height: 100%;
+  background: var(--Dark-Blue, #10141E);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.haveAccount-text {
+  color: white;
+  font-size: 15px;
+}
+
+.haveAccount-btn {
+  color: var(--Red, #FC4747);
+  cursor: pointer;
+}
