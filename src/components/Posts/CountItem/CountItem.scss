@@ -1,0 +1,28 @@
+.count-item-container {
+  width: 360px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  transition: 0.5s;
+  div {
+    cursor: pointer;
+  }
+}
+
+.count-item-container-darkmode {
+  width: 360px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #25273D;
+  transition: 0.5s;
+  p{
+    color: #C8CBE7;
+  }
+  div {
+    cursor: pointer;
+    color: #C8CBE7;
+  }
+}
