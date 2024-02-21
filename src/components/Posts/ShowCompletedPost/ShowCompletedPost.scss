@@ -1,0 +1,27 @@
+.show-completed-post-container {
+  width: 360px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-top: solid #E3E4F1;
+  transition: 0.5s;
+  div {
+    cursor: pointer;
+  }
+}
+
+.show-completed-post-container-darkmode {
+  width: 360px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-top: solid #393A4B; 
+  background-color: #25273D;
+  transition: 0.5s;
+  div {
+    cursor: pointer;
+    color: #C8CBE7;
+  }
+}
