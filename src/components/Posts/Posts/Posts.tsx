@@ -10,7 +10,12 @@ import ShowCompletedPost from '../ShowCompletedPost/ShowCompletedPost';
 import './Posts.scss';
 import { FC } from 'react';
 
-const Posts: FC = () => {
+interface PostsProps {
+  user_id: string
+}
+
+const Posts: FC<PostsProps> = ({ user_id }) => {
+  
   const [darkMode, setDarkMode] = useState(false);
   const [completedPost, setCompletedPost] = useState(false)
   const [activePost, setActivePost] = useState(false)
@@ -46,7 +51,7 @@ const Posts: FC = () => {
   return (
     <div className={darkMode ? 'child-container-darkmode' : 'child-container'}>
       <Header darkMode={darkMode} setDarkMode={setDarkMode} />
-      <PostForm darkMode={darkMode} />
+      <PostForm darkMode={darkMode} user_id={user_id} />
       <ul className="posts-container">
         {showPosts()}
         <CountItem posts={posts} completedPostsArray={completedPostsArray} activePostsArray={activePostsArray} darkMode={darkMode} completedPost={ completedPost } activePost={activePost} />

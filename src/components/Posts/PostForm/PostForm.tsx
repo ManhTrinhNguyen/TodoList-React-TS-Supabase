@@ -6,9 +6,10 @@ import cirleImg from '../../../assets/circle.png'
 import cirleDarkMode from '../../../assets/circle-darkmode.png'
 
 interface PostFormProps {
-  darkMode: boolean
+  darkMode: boolean;
+  user_id: string
 }
-const PostForm: FC<PostFormProps> = ({ darkMode }) => {
+const PostForm: FC<PostFormProps> = ({ darkMode, user_id }) => {
   const [text, setText] = useState('');
   const dispatch = useAppDispatch();
 
@@ -18,7 +19,7 @@ const PostForm: FC<PostFormProps> = ({ darkMode }) => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (text.trim()) {
-      dispatch(addPost(text));
+      dispatch(addPost({ text, user_id }));
     }
     setText('')
   };

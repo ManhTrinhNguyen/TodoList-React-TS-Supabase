@@ -39,11 +39,13 @@ const PostComponent: FC<PostsProps> = ({ post, darkMode }) => {
           id: post.id,
           created_at: post.created_at,
           todo: post.todo,
+          user_id: post.user_id,
           completed: false 
         })) : dispatch(updatePost({
           id: post.id,
           created_at: post.created_at,
           todo: post.todo,
+          user_id: post.user_id,
           completed: true
         }))}
         className='circle'

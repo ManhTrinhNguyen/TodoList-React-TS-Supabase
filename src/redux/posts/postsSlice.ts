@@ -5,6 +5,11 @@ import { supabase } from "../../supbase/supabaseClient";
 import { useAppDispatch } from "../reduxHooks";
 import { useEffect } from "react";
 
+interface AddPostsPayload {
+  text: string;
+  user_id: string
+}
+
 export const initialState: InitialState = {
   posts: [],
   isLoading: false,
@@ -21,11 +26,14 @@ export const fetchPosts = createAsyncThunk('posts/fetchPosts', async (): Promise
 });
 
 // Add Post
-export const addPost = createAsyncThunk('posts/addPost', async (text: string): Promise<Posts[] | null> => {
+export const addPost = createAsyncThunk('posts/addPost', async (payload: AddPostsPayload): Promise<Posts[] | null> => {
+  const { text, user_id } = payload;
+
   const newPost = {
     todo: text,
     created_at: new Date().toLocaleString(),
-    completed: false
+    completed: false,
+    user_id: user_id
   }
   const { data, error } = await supabase.from('posts').insert([newPost]).select();
   if (error) {
@@ -91,7 +99,9 @@ export const postsSlice = createSlice({
         state.isLoading = false;
         
         if (action.payload === null) return
+        console.log(action.payload[0]);
         state.posts?.push(action.payload[0])
+
       })
       .addCase(addPost.rejected, (state, action) => {
         state.isLoading = false;

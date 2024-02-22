@@ -3,7 +3,8 @@
 .auth-container {
   width: 90%;
   height: 100%;
-  background: var(--Dark-Blue, #10141E);
+  /* background: var(--Dark-Blue, #10141E); */
+  
   margin: 0 auto;
   display: flex;
   align-items: center;

@@ -1,6 +1,6 @@
 import { FC, useState } from 'react';
 import { supabase } from '../../supbase/supabaseClient';
-import './SignUp.css'
+import './SignUp.scss'
 
 type User = {
   email: string;

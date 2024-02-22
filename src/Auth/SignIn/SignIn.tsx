@@ -1,7 +1,7 @@
 import { FC, useState } from 'react';
 import { supabase } from '../../supbase/supabaseClient';
 import { GoogleOauth } from '../GoogleOauth/GoogleOauth';
-import './SignIn.css';
+import './SignIn.scss';
 
 type User = {
   email: string;

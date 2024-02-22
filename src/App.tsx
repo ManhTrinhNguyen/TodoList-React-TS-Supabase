@@ -20,22 +20,19 @@ const App: FC = () => {
   const [session, setSession] = useState<Session | null>(null);
 
   useEffect(() => {
-      // supabase.auth.getSession().then(({ data: { session } }) => {
-      //   setSession(session);
-      // console.log(session);
-        
-      // });
+      supabase.auth.getSession().then(({ data: { session } }) => {
+        setSession(session);
+      });
 
     supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session);
-      console.log(session);
-      
     });
     
     
   }, []);
 
-  return <div className='container'>{!session ? <Auth /> : <Posts />}</div>;
+  
+  return <div className='container'>{!session ? <Auth /> : <Posts user_id={session?.user.id} />} </div>;
 };
 
 export default App;
