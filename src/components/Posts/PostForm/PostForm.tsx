@@ -27,7 +27,7 @@ const PostForm: FC<PostFormProps> = ({ darkMode, user_id }) => {
   return (
     <div className={darkMode ? 'form-container-darkmode' : 'form-container'}>
       <img src={darkMode ? cirleDarkMode : cirleImg} alt="circle" />
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} data-testid="form">
         <input
           type="text"
           value={text}

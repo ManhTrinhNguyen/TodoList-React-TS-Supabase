@@ -3,7 +3,7 @@ export interface Posts {
   created_at: string;
   todo: string;
   completed: boolean;
-  user_id: number
+  user_id: string
 }
 
 export interface InitialState {

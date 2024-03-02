@@ -28,7 +28,7 @@ export const fetchPosts = createAsyncThunk('posts/fetchPosts', async (): Promise
 // Add Post
 export const addPost = createAsyncThunk('posts/addPost', async (payload: AddPostsPayload): Promise<Posts[] | null> => {
   const { text, user_id } = payload;
-
+  
   const newPost = {
     todo: text,
     created_at: new Date().toLocaleString(),
@@ -39,7 +39,6 @@ export const addPost = createAsyncThunk('posts/addPost', async (payload: AddPost
   if (error) {
     console.error(error)
   }
-  
   return data;
 });
 
@@ -97,10 +96,8 @@ export const postsSlice = createSlice({
       })
       .addCase(addPost.fulfilled, (state, action: PayloadAction<Posts[] | null>) => {
         state.isLoading = false;
-        
-        if (action.payload === null) return
-        console.log(action.payload[0]);
-        state.posts?.push(action.payload[0])
+        if (action.payload === null) return;
+        state.posts?.push(action.payload[0]);
 
       })
       .addCase(addPost.rejected, (state, action) => {

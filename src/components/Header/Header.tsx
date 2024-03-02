@@ -1,16 +1,12 @@
-import { useState } from 'react'
 import moonImg from '../../assets/moon.png'
 import sunImg from '../../assets/sun.png'
 import todoImg from '../../assets/TODO.png'
 import './Header.scss'
 import { FC } from 'react'
-
-
 interface HeaderProps {
   darkMode: boolean
   setDarkMode : (newValue: boolean | ((prev: boolean) => boolean))=> void
 }
-
 
 const Header: FC<HeaderProps> = ({ darkMode, setDarkMode }) => {
 

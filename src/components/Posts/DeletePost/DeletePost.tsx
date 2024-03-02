@@ -10,17 +10,18 @@ interface DeletePostProps {
 const DeletePost: FC<DeletePostProps> = ({ id }) => {
   const dispatch = useAppDispatch();
 
-  const handleDelete = () => {
+  const handleDelete = async () => {
     try {
-      dispatch(deletePost(id));
+      await dispatch(deletePost(id));
+      return id
     } catch (error) {
       console.error(error);
     }
   };
 
   return (
-    <span className="delete" onClick={handleDelete}>
-      <img src={deleteLogo} alt="delete" />
+    <span className="delete" >
+      <img src={deleteLogo} onClick={handleDelete} alt="delete" />
     </span>
   );
 };

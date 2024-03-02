@@ -35,13 +35,13 @@ const PostComponent: FC<PostsProps> = ({ post, darkMode }) => {
   return (
     <li className={darkMode ? 'post-container-darkmode' : 'post-container'}>
       <img
-        onClick={() => post.completed ? dispatch(updatePost({
+        onClick={async () => post.completed ? await dispatch(updatePost({
           id: post.id,
           created_at: post.created_at,
           todo: post.todo,
           user_id: post.user_id,
           completed: false 
-        })) : dispatch(updatePost({
+        })) : await dispatch(updatePost({
           id: post.id,
           created_at: post.created_at,
           todo: post.todo,

@@ -1,0 +1,30 @@
+.signOut-container {
+  width: 100%;
+  background-color: white;
+  button {
+    width: 360px;
+    height: 48px;
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    border-top: solid #C8CBE7;
+    transition: 0.5s;
+    font-size: 15px;
+  }
+}
+
+.signOut-container-darkmode {
+  width: 100%;
+  background-color: #25273D;
+  button {
+    width: 360px;
+    height: 48px;
+    cursor: pointer;
+    background-color: #25273D;
+    border: none;
+    border-top: solid #393A4B;
+    color: #C8CBE7;
+    transition: 0.5s;
+    font-size: 15px;
+  }
+}

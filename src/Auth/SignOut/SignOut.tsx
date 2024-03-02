@@ -1,7 +1,14 @@
 import { FC } from 'react';
 import { supabase } from '../../supbase/supabaseClient';
+import './SignOut.scss'
 
-const SignOut: FC = () => {
+interface SignOutProps {
+  darkMode: boolean
+}
+
+const SignOut: FC<SignOutProps> = ({ darkMode }) => {
+  console.log(darkMode);
+  
   const handleSignOut = async () => {
     const { error } = await supabase.auth.signOut();
     if (error) {
@@ -9,7 +16,7 @@ const SignOut: FC = () => {
     }
   }
   return (
-    <div>
+    <div className={darkMode ? 'signOut-container-darkmode' : 'signOut-container'}>
       <button onClick={handleSignOut}>Sign Out</button>
     </div>
   )

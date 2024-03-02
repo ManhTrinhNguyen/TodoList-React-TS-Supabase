@@ -55,9 +55,10 @@ const Posts: FC<PostsProps> = ({ user_id }) => {
       <ul className="posts-container">
         {showPosts()}
         <CountItem posts={posts} completedPostsArray={completedPostsArray} activePostsArray={activePostsArray} darkMode={darkMode} completedPost={ completedPost } activePost={activePost} />
-        <ShowCompletedPost setCompletedPost={setCompletedPost} setActivePost={ setActivePost } darkMode={darkMode}/>
+        <ShowCompletedPost setCompletedPost={setCompletedPost} setActivePost={setActivePost} darkMode={darkMode} />
+        <SignOut darkMode={darkMode}/>
       </ul>
-    <SignOut />
+    
     </div>
   );
 };
