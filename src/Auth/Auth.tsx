@@ -1,5 +1,4 @@
 import { useState, FC } from 'react';
-import { GoogleOauth } from './GoogleOauth/GoogleOauth';
 import SignUp from './SignUp/SignUp';
 import SignIn from './SignIn/SignIn';
 import './Auth.css';

@@ -1,7 +1,6 @@
 import { screen, fireEvent} from '@testing-library/react';
 import { test, describe, vi } from 'vitest';
 import Posts from './Posts';
-import { fetchPosts } from '../../../redux/posts/postsSlice';
 import { renderWithProviders } from '../../../utils/test-utils';
 import * as ReduxHooks from '../../../redux/reduxHooks'
 

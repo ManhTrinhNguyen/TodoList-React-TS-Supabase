@@ -27,8 +27,6 @@ const App: FC = () => {
     supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session);
     });
-    
-    
   }, []);
 
   
