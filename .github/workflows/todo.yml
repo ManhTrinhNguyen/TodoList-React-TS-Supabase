@@ -13,8 +13,8 @@ jobs:
         with:
           node-version: '20'
       - run: npm install
-      - run: run build 
-      
+      - run: npm run build 
+
 
 
   
