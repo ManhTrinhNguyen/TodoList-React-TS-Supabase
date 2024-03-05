@@ -7,7 +7,6 @@ interface SignOutProps {
 }
 
 const SignOut: FC<SignOutProps> = ({ darkMode }) => {
-  console.log(darkMode);
   
   const handleSignOut = async () => {
     const { error } = await supabase.auth.signOut();

@@ -18,8 +18,8 @@ jobs:
       - run: npm run build
       - name: Run tests 
         env: 
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+          VITE_SUPABASE_URL: ${{ secrets.SUPABASEURL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.SUPABASEANONKEY }}
         run: npm run test
 
 
