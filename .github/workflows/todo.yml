@@ -8,7 +8,6 @@ jobs:
   build: 
     env: 
       CI: true
-      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -17,7 +16,10 @@ jobs:
           node-version: '20'
       - run: npm install
       - run: npm run build
-      - run: npm run test
+      - name: Run tests 
+        env: 
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+        run: npm run test
 
 
 
