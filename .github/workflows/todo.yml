@@ -8,6 +8,7 @@ jobs:
   build: 
     env: 
       CI: true
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
